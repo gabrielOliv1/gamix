@@ -1,3 +1,9 @@
+### Histórico de revisão
+| Data | Versão | Descrição | Autor(es) |
+| -------- | -------- | -------- | -------- |
+| 04/05 | 0.1 | Criação do documento | Gabriel Vicente |
+
+
 # Brainstorming
 
 O primeiro brainstorming buscou identificar os principais requisitos funcionais para a aplicação, entender como deverão se relacionar para alcançarmos os objetivos da plataforma.
