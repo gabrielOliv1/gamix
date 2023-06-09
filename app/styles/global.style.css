@@ -1,3 +1,12 @@
+:root {
+    --delft_blue_bg: #1C2034;
+    --delft_blue: #343A5B;
+    --savoy_blue: #626CA7;
+    --jet: #333333;
+    --saffron: #F9C536;
+    --carolina_blue: #89BDDF;
+    --ultra_violet: #68589D;
+}
 * {
     margin: 0;
     padding: 0;
