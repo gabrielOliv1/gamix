@@ -1,0 +1,106 @@
+@import "/app/styles/global.style.css";
+
+main {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+    font-size: 48px;
+    color: white;
+}
+
+p {
+    color: white;
+    font-size: 16px;
+}
+
+button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 14px 16px;
+
+    min-width: 300px;
+    border: none;
+    color: white;
+    font-weight: 600;
+    font-size: 18px;
+    background: rgba(104, 88, 157, 0.6);
+    border-radius: 8px;
+}
+
+.start {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 25px;
+    align-items: center;
+    justify-content: center;
+}
+
+.login_informations {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.other_options {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.end {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+
+.dont_remember_password {
+    color: white;
+    font-size: 14px;
+    font-weight: 200;
+}
+
+.dont_has_account {
+    color: white;
+    font-size: 18px;
+    font-weight: 200;
+}
+
+.remember {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+}
+
+.check {
+    width: 24px;
+    height: 24px;
+    border: 2px var(--carolina_blue) solid;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.check > svg {
+    width: 16px;
+    stroke: var(--carolina_blue);
+    fill: var(--carolina_blue);
+}
