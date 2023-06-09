@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="/app/styles/global.style.css" />
     <link rel="stylesheet" href="./login.style.css" />
     <link rel="shortcut icon" href="/app/images/icon/favicon.ico" type="image/x-icon">
+    <script src="./login.js"></script>
     <title>Login</title>
 </head>
 <body>
@@ -50,7 +51,7 @@
                 </div>
             </div>
             <div class="remember">
-                <div class="check">
+                <div class="check" onclick="toggleCheck(this)">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
                         <path fill-rule="evenodd" d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z" clip-rule="evenodd" />
                     </svg>
@@ -59,8 +60,8 @@
             </div>
         </div>
         <div class="end">
-            <button>Conectar-se</button>
-            <p class="dont_has_account">Ainda não tem uma conta?</p>
+            <button id="login_button" onclick="login(this)">Conectar-se</button>
+            <a class="dont_has_account" href="#">Ainda não tem uma conta?</a>
         </div>
     </main>
 </body>
