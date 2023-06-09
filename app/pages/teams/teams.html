@@ -7,6 +7,7 @@
     <base href="/app">
     <link rel="stylesheet" href="/app/styles/global.style.css">
     <link rel="stylesheet" href="/app/pages/teams/style/style.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <title>Teams</title>
 </head>
 <body>
@@ -23,24 +24,22 @@
     </div>
     </header>
     <main class="main-container">
-        <section class="team-navigation">
-            <nav>
-                <ul>
+            <nav class="team-navigation">
+                <ul class="team-links">
                     <li><a href="">Projetos</a></li>
                     <li><a href="">Posts</a></li>
                     <li><a href="">Sobre</a></li>
                 </ul>
             </nav>
-        </section>
         <section class="team-posts"></section>
     </main>
     <nav class="nav-bottom-container">
-        <ul>
-            <li><img src="app/images/Home.svg" alt="Ir para feed"></li>
-            <li><img src="app/images/Search.svg" alt="Pesquisar"></li>
-            <li><img src="app/images/Plus.svg" alt="Criar"></li>
-            <li><img src="app/images/UserGroup.svg" alt="Ver suas equipes"></li>
-            <li><img src="app/images/User.svg" alt="Seu perfil"></li>
+        <ul class="nav-icons-container">
+            <li class="nav-icons"><i class="ph-fill ph-house"></i></li>
+            <li class="nav-icons"><i class="ph-bold ph-magnifying-glass"></i></li>
+            <li class="nav-icons"><i class="ph-bold ph-plus"></i></li>
+            <li class="nav-icons"><i class="ph-bold ph-users-three"></i></li>
+            <li class="nav-icons"><i class="ph-bold ph-user"></i></li>
         </ul>
     </nav>
 </body>
