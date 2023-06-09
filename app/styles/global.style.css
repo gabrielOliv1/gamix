@@ -13,6 +13,7 @@
     box-sizing: border-box;
     user-select: none;
     font-family: Roboto, sans-serif, monospace;
+    text-decoration: none;
 }
 
 body {
