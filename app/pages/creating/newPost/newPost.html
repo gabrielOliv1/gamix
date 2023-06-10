@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="/app/styles/global.style.css">
     <title>New Post</title>
     <link rel="stylesheet" href="style/PostStyle.css">
-    <link src="js/PostJS.js">
+    <script src="js/PostJS.js"></script>
 </head>
 
 <body>
@@ -32,11 +32,9 @@
                 </svg>
             </div>
         </div>
-        <div id="rectangle_1" contenteditable="true">
-            <div id="text3">Título</div>
-        </div>
+        <input id="rectangle_1" id="rectangle_1" type="text" onclick="removerTexto()" value="Título">
         <div id="rectangle_2">
-            <div id="text4" contenteditable="true" style="width: 320px; height: 225px;">Conteúdo do post</div>
+            <textarea id="inrectangle_2" type="text" onclick="removerTexto2()">Conteúdo do post</textarea>
             <div id="rectangle_3" contenteditable="false">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                     stroke="currentColor" class="w-6 h-6" color="#FFFFFF" width="20px"

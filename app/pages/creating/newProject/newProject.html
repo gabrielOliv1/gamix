@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="/app/styles/global.style.css">
     <title>New project</title>
     <link rel="stylesheet" href="style/ProjectStyle.css">
+    <script src="JS/ProjectJS.js"></script>
 </head>
-
 <body>
     <div id="background">
         <div id="publish">
@@ -27,13 +27,9 @@
                         clip-rule="evenodd" />
                 </svg>
             </div>
-        </div>
-        <div id="rectangle_1" contenteditable="true">
-            <div id="text3">Título</div>
-        </div>
-        <div id="rectangle_2">
-            <div id="text4" contenteditable="true" style="width: 320px; height: 120px;">Descrição</div>
-        </div>
+        </div> 
+        <input id="rectangle_1" type="text" onclick="removerTexto()" value="Título">
+        <textarea id="rectangle_2" type="text" onclick="removerTexto2()">Descrição</textarea>
         <div id="rectangle_3">
             <div id="text4">Tags</div>
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
