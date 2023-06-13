@@ -9,7 +9,9 @@
     <title>New project</title>
     <link rel="stylesheet" href="style/ProjectStyle.css">
     <script src="JS/ProjectJS.js"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
 </head>
+
 <body>
     <div id="background">
         <div id="publish">
@@ -19,34 +21,48 @@
                     <img src="img/128170148.png" />
                 </div>
                 <div id="text2">Comunidade</div>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5"
-                    width="20px" color="white" onmouseover="this.style.color = '#89BDDF'"
-                    onmouseout="this.style.color = '#FFFFFF'">
+                <a href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5"
+                    width="20px" onmouseover="this.style.color = '#89BDDF'" onmouseout="this.style.color = '#FFFFFF'">
                     <path fill-rule="evenodd"
                         d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
                         clip-rule="evenodd" />
-                </svg>
+                </svg></a>
             </div>
-        </div> 
+        </div>
         <input id="rectangle_1" type="text" onclick="removerTexto()" value="Título">
-        <textarea id="rectangle_2" type="text" onclick="removerTexto2()">Descrição</textarea>
+        <div id="rectangle_2">
+            <textarea id="text_rectangle_2" type="text" onclick="removerTexto2()">Descrição</textarea>
+        </div>
         <div id="rectangle_3">
-            <div id="text4">Tags</div>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                stroke="currentColor" class="w-6 h-6" color="#FFFFFF" onmouseover="this.style.color = '#89BDDF'"
-                onmouseout="this.style.color = '#FFFFFF'">
-                <path stroke-linecap="round" stroke-linejoin="round"
-                    d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
+            <div id="text4">Temas</div>
+            <a href="#"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                    stroke-width="1.5" stroke="currentColor" class="w-6 h-6" onmouseover="this.style.color = '#89BDDF'"
+                    onmouseout="this.style.color = '#FFFFFF'">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg></a>
         </div>
         <div id="rectangle_4">
-            <div id="text3"><p>Diretórios</p><img src="img/image-removebg-preview.png" width="30px"/></div>
+            <div id="text3">
+                <p>Diretórios</p><img src="img/image-removebg-preview.png" width="30px" />
+            </div>
         </div>
         <button>
             <div id="button_conf">Continuar</div>
         </button>
     </div>
-</div>
+    <nav class="nav-bottom-container">
+        <ul class="nav-icons-container">
+            <li class="nav-icons"><a href="/pages/feed/feed.html"><i class="ph-fill ph-house"></i></a></li>
+            <li class="nav-icons"><a href="/pages/feed/feed.html"><i class="ph-bold ph-magnifying-glass"></i></a></li>
+            <li class="nav-icons"><i class="ph-bold ph-plus"></i></li>
+            <li class="nav-icons"><a href="/pages/teams/teams.html"><i
+                        class="ph-bold ph-users-three current-page"></i></a></li>
+            <li class="nav-icons"><a href="/images/userProfile/userProfile.html"><i class="ph-bold ph-user"></i></a>
+            </li>
+        </ul>
+    </nav>
+    </div>
 </body>
 
 </html>
