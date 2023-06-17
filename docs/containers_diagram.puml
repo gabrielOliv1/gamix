@@ -10,11 +10,6 @@
 Person(admin, "Admin", "Conta com permissões administrativas")
 
 System_Boundary(Software, "Gamix") {
-  System_Boundary(front_end, "Front-end") {
-    Container(website, "Website", "NextJS", "Versão otimizada para web com todos os recursos existentes no aplicativo mobile.", $sprite="nextjs_original")
-    Container(mobile, "Mobile APP", "NextJS", "Produto pensado e otimizado para o mobile", $sprite="nextjs_original")
-  }
-
   System_Boundary(back_end, "Back-end") {
     Container(load_balancer, "Load Balancer", "Nginx", "Faz o balanceamento da carga para maior disponibilidade e escalabilidade, utilizando o algoritmo dinâmico Weighted Round-robin", $sprite="nginx_original")
 
@@ -28,12 +23,15 @@ System_Boundary(Software, "Gamix") {
     ContainerDb(database, "Banco de Dados", "MySQL", "Responsável por armazenar os dados da aplicação", $sprite="mysql")
   }
 
-  Rel(admin, front_end, "O administrador utiliza a interface tendo os seus privilégios máximos", "HTTPS")
+  System_Boundary(front_end, "Front-end") {
+    Container(website, "Website", "NextJS", "Versão otimizada para web com todos os recursos existentes no aplicativo mobile.", $sprite="nextjs_original")
+    Container(mobile, "Mobile APP", "NextJS", "Produto pensado e otimizado para o mobile", $sprite="nextjs_original")
+  }
 
-  Rel(website, load_balancer, "Analisa qual o melhor servidor web para que o usuário possa utilizar os recursos")
-  Rel(load_balancer, website, "Redireciona a aplicação para o servidor web apropriado")
-  Rel(mobile, load_balancer, "Analisa qual o melhor servidor mobile para que o usuário possa utilizar os recursos")
-  Rel(load_balancer, mobile, "Redireciona a aplicação para o servidor mobile apropriado")
+  Rel_Right(admin, front_end, "O administrador utiliza a interface tendo os seus privilégios máximos", "HTTPS")
+
+  BiRel_Right(website, load_balancer, "Analisa qual o melhor servidor web para que o usuário possa utilizar os recursos, e o redireciona para ele")
+  BiRel_Right(mobile, load_balancer, "Analisa qual o melhor servidor mobile para que o usuário possa utilizar os recursos, e o redireciona para ele")
   
   Rel(load_balancer, server1_web, "Redireciona a carga")
   Rel(load_balancer, server2_web, "Redireciona a carga")
@@ -45,7 +43,7 @@ System_Boundary(Software, "Gamix") {
   Rel(server1_mobile, api, "Conversa com a API Java", "HTTPS")
   Rel(server2_mobile, api, "Conversa com a API Java", "HTTPS")
   
-  Rel(api, database, "Lê e escreve no banco de dados", "TCP/IP")
+  BiRel(api, database, "Lê e escreve no banco de dados", "TCP/IP")
 }
 
 @enduml
