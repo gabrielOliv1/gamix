@@ -1,0 +1,51 @@
+@startuml Gamix
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+!define ICONURL https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/v2.4.0
+
+!include ICONURL/devicons/java.puml
+!include ICONURL/devicons2/nextjs_original.puml
+!include ICONURL/devicons2/nginx_original.puml
+!include ICONURL/devicons2/mysql.puml
+
+Person(admin, "Admin", "Conta com permissões administrativas")
+
+System_Boundary(Software, "Gamix") {
+  System_Boundary(front_end, "Front-end") {
+    Container(website, "Website", "NextJS", "Versão otimizada para web com todos os recursos existentes no aplicativo mobile.", $sprite="nextjs_original")
+    Container(mobile, "Mobile APP", "NextJS", "Produto pensado e otimizado para o mobile", $sprite="nextjs_original")
+  }
+
+  System_Boundary(back_end, "Back-end") {
+    Container(load_balancer, "Load Balancer", "Nginx", "Faz o balanceamento da carga para maior disponibilidade e escalabilidade, utilizando o algoritmo dinâmico Weighted Round-robin", $sprite="nginx_original")
+
+    Container(server1_web, "Servidor Web 1", "NextJS", "Instância da aplicação destinada a web", $sprite="nextjs_original")
+    Container(server2_web, "Servidor Web 2", "NextJS", "Instância da aplicação destinada a web", $sprite="nextjs_original")
+    
+    Container(server1_mobile, "Servidor Mobile 1", "NextJS", "Instância da aplicação destinada ao mobile", $sprite="nextjs_original")
+    Container(server2_mobile, "Servidor Mobile 2", "NextJS", "Instância da aplicação destinada ao mobile", $sprite="nextjs_original")
+
+    Container(api, "API RESTFul", "Java", "Recebe requests para as manipulações no banco de dados e para se conectar com outros diferentes serviços", $sprite="java")
+    ContainerDb(database, "Banco de Dados", "MySQL", "Responsável por armazenar os dados da aplicação", $sprite="mysql")
+  }
+
+  Rel(admin, front_end, "O administrador utiliza a interface tendo os seus privilégios máximos", "HTTPS")
+
+  Rel(website, load_balancer, "Analisa qual o melhor servidor web para que o usuário possa utilizar os recursos")
+  Rel(load_balancer, website, "Redireciona a aplicação para o servidor web apropriado")
+  Rel(mobile, load_balancer, "Analisa qual o melhor servidor mobile para que o usuário possa utilizar os recursos")
+  Rel(load_balancer, mobile, "Redireciona a aplicação para o servidor mobile apropriado")
+  
+  Rel(load_balancer, server1_web, "Redireciona a carga")
+  Rel(load_balancer, server2_web, "Redireciona a carga")
+  Rel(load_balancer, server1_mobile, "Redireciona a carga")
+  Rel(load_balancer, server2_mobile, "Redireciona a carga")
+
+  Rel(server1_web, api, "Conversa com a API Java", "HTTPS")
+  Rel(server2_web, api, "Conversa com a API Java", "HTTPS")
+  Rel(server1_mobile, api, "Conversa com a API Java", "HTTPS")
+  Rel(server2_mobile, api, "Conversa com a API Java", "HTTPS")
+  
+  Rel(api, database, "Lê e escreve no banco de dados", "TCP/IP")
+}
+
+@enduml
