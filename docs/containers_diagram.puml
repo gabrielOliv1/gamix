@@ -7,9 +7,9 @@
 !include ICONURL/devicons2/nginx_original.puml
 !include ICONURL/devicons2/mysql.puml
 
-Person(admin, "Admin", "Conta com permissões administrativas")
+Person(user, "Usuário", "Um usuário qualquer")
 
-System_Boundary(Software, "Gamix") {
+System_Boundary(software, "Gamix") {
   System_Boundary(back_end, "Back-end") {
     Container(load_balancer, "Load Balancer", "Nginx", "Faz o balanceamento da carga para maior disponibilidade e escalabilidade, utilizando o algoritmo dinâmico Weighted Round-robin", $sprite="nginx_original")
 
@@ -28,15 +28,15 @@ System_Boundary(Software, "Gamix") {
     Container(mobile, "Mobile APP", "NextJS", "Produto pensado e otimizado para o mobile", $sprite="nextjs_original")
   }
 
-  Rel_Right(admin, front_end, "O administrador utiliza a interface tendo os seus privilégios máximos", "HTTPS")
+  Rel_Right(user, front_end, "Usuário acessa a aplicação", "HTTPS")
 
   BiRel_Right(website, load_balancer, "Analisa qual o melhor servidor web para que o usuário possa utilizar os recursos, e o redireciona para ele")
   BiRel_Right(mobile, load_balancer, "Analisa qual o melhor servidor mobile para que o usuário possa utilizar os recursos, e o redireciona para ele")
   
-  Rel(load_balancer, server1_web, "Redireciona a carga")
-  Rel(load_balancer, server2_web, "Redireciona a carga")
-  Rel(load_balancer, server1_mobile, "Redireciona a carga")
-  Rel(load_balancer, server2_mobile, "Redireciona a carga")
+  Rel_R(load_balancer, server1_web, "Redireciona a carga")
+  Rel_R(load_balancer, server2_web, "Redireciona a carga")
+  Rel_R(load_balancer, server1_mobile, "Redireciona a carga")
+  Rel_R(load_balancer, server2_mobile, "Redireciona a carga")
 
   Rel(server1_web, api, "Conversa com a API Java", "HTTPS")
   Rel(server2_web, api, "Conversa com a API Java", "HTTPS")
@@ -45,5 +45,11 @@ System_Boundary(Software, "Gamix") {
   
   BiRel(api, database, "Lê e escreve no banco de dados", "TCP/IP")
 }
+
+System_Boundary(external_services, "Serviços externos") {
+  Container(smtp, "Envio em massa de e-mails", "SMTP")
+}
+
+Rel(api, smtp, "Envia e-mails em massa usando")
 
 @enduml
