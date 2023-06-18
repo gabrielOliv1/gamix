@@ -1,0 +1,166 @@
+body {
+    color: var(--white);
+    padding: 2rem 1.25rem;
+}
+
+h2 {
+    font-size: 1rem;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+    color: var(--white);
+    cursor: pointer;
+}
+
+.mb-2 {
+    margin-bottom: 2rem;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.375rem;
+
+    padding: 1rem 1.25rem;
+    background-color: var(--savoy_blue);
+    border-radius: 8px;
+
+    box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.25);
+}
+
+.container h1 {
+    font-size: 1.125;
+    text-transform: uppercase;
+}
+
+.card {
+    padding: 0.625rem;
+    background-color: var(--delft_blue);
+    border-radius: 8px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+
+    box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.25);
+}
+
+.cardHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cardHeader div {
+    display: flex;
+    align-items: center;
+    gap: 5px
+}
+
+.cardHeader div img {
+    width: 1rem;
+    height: 1rem;
+
+    border-radius: 999px;
+}
+
+.cardContent {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.75rem;
+}
+
+.cardContent img {
+    width: 1.5rem;
+    height: 1.5rem;
+
+    border: 1px solid var(--white);
+    border-radius: 8px;
+}
+
+.cardContent .content {
+    font-size: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.cardFooter {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.cardFooter button {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.readMoreButton {
+    padding: 0.5rem 0.625rem;
+
+    background-color: var(--ultra_violet_dark);
+    border-radius: 8px;
+
+    font-size: 0.75rem;
+}
+
+.readMoreButton:hover {
+    background-color: var(--ultra_violet_light);
+    transition: background .2s;
+}
+
+.nav-bottom-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background-color: #333333;
+  }
+
+  .nav-icons-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 330px;
+    height: fit-content;
+    list-style: none;
+  }
+
+  .nav-icons {
+    width: 1.25em;
+    height: 1.25em;
+  }
+
+  .nav-icons i {
+    font-size: 20px;
+    color: var(--white);
+  }
+
+  .nav-icons i:hover {
+    color: #89BDDF;
+  }
+
+  .nav-icons a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .nav-icons i.ph-magnifying-glass {
+    color: #89BDDF;
+  }

@@ -32,7 +32,7 @@ body {
     font-weight: 600;
     font-size: 16px;
     line-height: 19px;
-    color: #FFFFFF;
+    color: var(--white);
 }
 
 #background #publish {
@@ -51,7 +51,7 @@ body {
     font-weight: 700;
     font-size: 16px;
     line-height: 19px;
-    color: #FFFFFF;
+    color: var(--white);
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
@@ -83,7 +83,7 @@ body {
     font-weight: 700;
     font-size: 12px;
     line-height: 14px;
-    color: #FFFFFF;
+    color: var(--white);
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     padding-left: 3px;
     padding-top: 3px;
@@ -105,7 +105,7 @@ body {
     font-weight: 200;
     font-size: 12px;
     line-height: 14px;
-    color: #FFFFFF;
+    color: var(--white);
     padding-left: 20px;
 }
 #rectangle_1:hover{
@@ -127,7 +127,7 @@ body {
     font-weight: 200;
     font-size: 12px;
     line-height: 14px;
-    color: #FFFFFF;
+    color: var(--white);
 }
 
 #text4 {
@@ -141,7 +141,7 @@ body {
     font-weight: 200;
     font-size: 12px;
     line-height: 14px;
-    color: #FFFFFF;
+    color: var(--white);
     padding-top: 20px;
     padding-left: 20px;
 }
@@ -179,7 +179,7 @@ body {
     font-weight: 200;
     font-size: 12px;
     line-height: 14px;
-    color: #FFFFFF;
+    color: var(--white);
     padding-top: 20px;
     padding-left: 20px;
     z-index: 1;
@@ -190,7 +190,7 @@ body {
     background-color: #444;
 }
 svg {
-    color: #FFFFFF;  
+    color: var(--white);  
 }
 .nav-bottom-container {
 display: flex;
@@ -221,7 +221,7 @@ height: 1.25em;
 
 .nav-icons i {
 font-size: 20px;
-color: #FFFFFF;
+color: var(--white);
 }
 
 .nav-icons i:hover {
