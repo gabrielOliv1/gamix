@@ -1,0 +1,17 @@
+@startuml GamixLoadBalancer
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+!define ICONURL https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/v2.4.0
+
+!include ICONURL/devicons/java.puml
+!include ICONURL/devicons2/nextjs_original.puml
+!include ICONURL/devicons2/nginx_original.puml
+!include ICONURL/devicons2/mysql.puml
+
+Person(user, "Usuário", "Os usuários ou sistemas que enviam solicitações ao Load Balancer Nginx ao acessarem o website através do URL para obter acesso à aplicação web balanceada.")
+Component(nginx, "Load Balancer Nginx", "Nginx", "O Load Balancer Nginx é responsável por distribuir o tráfego de entrada entre os servidores de aplicativos de forma balanceada, utilizando o algoritmo dinâmico Weighted Round-robin. Ele atua como uma camada intermediária entre os clientes e os servidores de aplicativos, direcionando as solicitações recebidas.", $sprite="nginx_original")
+Component(app_instance, "Instância de Aplicação Web Next.js", "Next.js", "A Instância de Aplicação Web Next.js é uma instância específica de um servidor web que hospeda e executa a aplicação web desenvolvida com Next.js. Pode haver várias instâncias de aplicação web Next.js configuradas para lidar com as solicitações.", $sprite="nextjs_original")
+
+Rel_R(user, nginx, "Os usuários enviam solicitações ao Load Balancer Nginx para serem encaminhadas para as Instâncias de Aplicação Web Next.js adequadas.")
+Rel(nginx, app_instance, "O Load Balancer Nginx distribui o tráfego de entrada entre várias instâncias de aplicação web Next.js, direcionando as solicitações para as instâncias apropriadas.")
+
+@enduml

@@ -43,7 +43,7 @@ System_Boundary(software, "Gamix") {
   Rel(server1_mobile, api, "Conversa com a API Java", "HTTPS")
   Rel(server2_mobile, api, "Conversa com a API Java", "HTTPS")
   
-  BiRel(api, database, "Lê e escreve no banco de dados", "TCP/IP")
+  BiRel(api, database, "Lê e escreve no banco de dados", "SQL/TCP")
 }
 
 System_Boundary(external_services, "Serviços externos") {
