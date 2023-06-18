@@ -22,34 +22,32 @@ System_Boundary(software, "Gamix") {
     Container(api, "API RESTFul", "Java", "Recebe requests para as manipulações no banco de dados e para se conectar com outros diferentes serviços", $sprite="java")
     ContainerDb(database, "Banco de Dados", "MySQL", "Responsável por armazenar os dados da aplicação", $sprite="mysql")
   }
-
   System_Boundary(front_end, "Front-end") {
     Container(website, "Website", "NextJS", "Versão otimizada para web com todos os recursos existentes no aplicativo mobile.", $sprite="nextjs_original")
     Container(mobile, "Mobile APP", "NextJS", "Produto pensado e otimizado para o mobile", $sprite="nextjs_original")
   }
 
   Rel_Right(user, front_end, "Usuário acessa a aplicação", "HTTPS")
-
-  BiRel_Right(website, load_balancer, "Analisa qual o melhor servidor web para que o usuário possa utilizar os recursos, e o redireciona para ele")
-  BiRel_Right(mobile, load_balancer, "Analisa qual o melhor servidor mobile para que o usuário possa utilizar os recursos, e o redireciona para ele")
   
-  Rel_R(load_balancer, server1_web, "Redireciona a carga")
-  Rel_R(load_balancer, server2_web, "Redireciona a carga")
-  Rel_R(load_balancer, server1_mobile, "Redireciona a carga")
-  Rel_R(load_balancer, server2_mobile, "Redireciona a carga")
-
-  Rel(server1_web, api, "Conversa com a API Java", "HTTPS")
-  Rel(server2_web, api, "Conversa com a API Java", "HTTPS")
-  Rel(server1_mobile, api, "Conversa com a API Java", "HTTPS")
-  Rel(server2_mobile, api, "Conversa com a API Java", "HTTPS")
+  BiRel_R(front_end, load_balancer, "Redireciona para o melhor servidor web")
   
-  BiRel(api, database, "Lê e escreve no banco de dados", "SQL/TCP")
+  Rel_R(load_balancer, server1_web, "Redireciona a carga para")
+  Rel_R(load_balancer, server2_web, "Redireciona a carga para")
+  Rel_R(load_balancer, server1_mobile, "Redireciona a carga para")
+  Rel_R(load_balancer, server2_mobile, "Redireciona a carga para")
+
+  Rel(server1_web, api, "Conversa com", "HTTPS")
+  Rel(server2_web, api, "Conversa com", "HTTPS")
+  Rel(server1_mobile, api, "Conversa com", "HTTPS")
+  Rel(server2_mobile, api, "Conversa com", "HTTPS")
+  
+  BiRel_L(api, database, "Lê e escreve no banco de dados", "SQL/TCP")
 }
 
 System_Boundary(external_services, "Serviços externos") {
   Container(smtp, "Envio em massa de e-mails", "SMTP")
 }
 
-Rel(api, smtp, "Envia e-mails em massa usando")
+Rel_R(api, smtp, "Envia e-mails em massa usando")
 
 @enduml
