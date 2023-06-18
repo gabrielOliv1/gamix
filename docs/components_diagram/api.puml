@@ -7,34 +7,28 @@
 !include ICONURL/devicons2/nginx_original.puml
 !include ICONURL/devicons2/mysql.puml
 
-Container(website, "Website", "NextJS", "Versão otimizada para web com todos os recursos existentes no aplicativo mobile.", $sprite="nextjs_original")
-Container(mobile, "Mobile APP", "NextJS", "Produto pensado e otimizado para o mobile", $sprite="nextjs_original")
+System_Boundary(front_end, "Front-end") {
+  Container(website, "Website", "NextJS", "Versão otimizada para web com todos os recursos existentes no aplicativo mobile.", $sprite="nextjs_original")
+  Container(mobile, "Mobile APP", "NextJS", "Produto pensado e otimizado para o mobile", $sprite="nextjs_original")
+}
+
 System_Boundary(software, "API") {
   System_Boundary(controllers, "Controladores") {  
-    Component(signin_controller, "Controlador de login", "tecnologia", "Permite aos usuários se conectarem na conta deles")
-    Component(register_controller, "Controlador de registro", "tecnologia", "Provê aos novos usuários a criação de uma conta")
-    Component(reset_password_controller, "Controlador de mudança de senha", "tecnologia", "Provê aos usuários mudança de senha com um URL")
-    Component(informations_controller, "Controlador de informações", "tecnologia", "Provê aos usuários informações sobre as suas contas, posts, etc...") 
+    Component(signin_controller, "Controlador de login", "Java", "Permite aos usuários se conectarem na conta deles", $sprite="java")
+    Component(register_controller, "Controlador de registro", "Java", "Provê aos novos usuários a criação de uma conta", $sprite="java")
+    Component(reset_password_controller, "Controlador de mudança de senha", "Java", "Provê aos usuários mudança de senha com um URL", $sprite="java")
+    Component(informations_controller, "Controlador de informações", "Java", "Provê aos usuários informações sobre as suas contas, posts, etc...", $sprite="java") 
   }
 
   System_Boundary(components, "Componentes") { 
-    Component(security_component, "Componente de segurança", "tecnologia", "Provê funcionalidades relacionadas com a recuperação de senhas, login, registro, etc...", $sprite="nextjs_original")
-    Component(email_component, "Componente de E-mail", "tecnologia", "Manda e-mails para usuários")
+    Component(security_component, "Componente de segurança", "Java", "Provê funcionalidades relacionadas com a recuperação de senhas, login, registro, etc...", $sprite="java")
+    Component(email_component, "Componente de E-mail", "Java", "Manda e-mails para usuários", $sprite="java")
     ComponentDb(database, "Banco de Dados", "MySQL", "Responsável por armazenar os dados da aplicação", $sprite="mysql")
   }
 
-  Rel(website, signin_controller, "Faz chamadas API para", "JSON/HTTPS")
-  Rel(website, register_controller, "Faz chamadas API para", "JSON/HTTPS")
-  Rel(website, reset_password_controller, "Faz chamadas API para", "JSON/HTTPS")
-  Rel(website, informations_controller, "Faz chamadas API para", "JSON/HTTPS")
-
-  Rel(mobile, signin_controller, "Faz chamadas API para", "JSON/HTTPS")
-  Rel(mobile, register_controller, "Faz chamadas API para", "JSON/HTTPS")
-  Rel(mobile, reset_password_controller, "Faz chamadas API para", "JSON/HTTPS")
-  Rel(mobile, informations_controller, "Faz chamadas API para", "JSON/HTTPS")
+  Rel_R(front_end, controllers, "Faz chamadas API para", "JSON/HTTPS")
 
   Rel(signin_controller, security_component, "Usa")
-  Rel(security_component, database, "Lê e escreve no", "SQL/TCP")
 
   Rel(register_controller, email_component, "Usa")
   Rel(register_controller, security_component, "Usa")
@@ -43,13 +37,15 @@ System_Boundary(software, "API") {
   Rel(reset_password_controller, security_component, "Usa")
 
   Rel(informations_controller, security_component, "Usa")
+
+  Rel_L(security_component, database, "Lê e escreve no", "SQL/TCP")
 }
 
 System_Boundary(external_services, "Serviços externos") {
   Container(smtp, "Envio em massa de e-mails", "SMTP")
 }
 
-Rel(email_component, smtp, "Envia e-mails usando o")
+Rel_R(email_component, smtp, "Envia e-mails usando o")
 
 
 @enduml
