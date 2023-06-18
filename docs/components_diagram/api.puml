@@ -13,14 +13,14 @@ System_Boundary(front_end, "Front-end") {
 }
 
 System_Boundary(software, "API") {
-  System_Boundary(controllers, "Controladores") {  
+  Boundary(controllers, "Controladores") {  
     Component(signin_controller, "Controlador de login", "Java", "Permite aos usuários se conectarem na conta deles", $sprite="java")
     Component(register_controller, "Controlador de registro", "Java", "Provê aos novos usuários a criação de uma conta", $sprite="java")
     Component(reset_password_controller, "Controlador de mudança de senha", "Java", "Provê aos usuários mudança de senha com um URL", $sprite="java")
     Component(informations_controller, "Controlador de informações", "Java", "Provê aos usuários informações sobre as suas contas, posts, etc...", $sprite="java") 
   }
 
-  System_Boundary(components, "Componentes") { 
+  Boundary(components, "Componentes") { 
     Component(security_component, "Componente de segurança", "Java", "Provê funcionalidades relacionadas com a recuperação de senhas, login, registro, etc...", $sprite="java")
     Component(email_component, "Componente de E-mail", "Java", "Manda e-mails para usuários", $sprite="java")
     ComponentDb(database, "Banco de Dados", "MySQL", "Responsável por armazenar os dados da aplicação", $sprite="mysql")
