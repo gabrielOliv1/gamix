@@ -119,3 +119,48 @@ button {
     background-color: var(--ultra_violet_light);
     transition: background .2s;
 }
+
+.nav-bottom-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background-color: #333333;
+  }
+
+  .nav-icons-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 330px;
+    height: fit-content;
+    list-style: none;
+  }
+
+  .nav-icons {
+    width: 1.25em;
+    height: 1.25em;
+  }
+
+  .nav-icons i {
+    font-size: 20px;
+    color: var(--white);
+  }
+
+  .nav-icons i:hover {
+    color: #89BDDF;
+  }
+
+  .nav-icons a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .nav-icons i.ph-magnifying-glass {
+    color: #89BDDF;
+  }
