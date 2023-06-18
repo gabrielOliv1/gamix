@@ -1,3 +1,15 @@
+:root {
+    --gray: #333333;
+    --background: #1C2034;
+    --savoy-blue: #626CA7;
+    --carolina-blue: #89BDDF;
+    --yellow-saffron: #F9C536; 
+    --ultra-violet: #68589D;
+
+    --white: #fff;
+    --black: #000;
+}
+
 * {
     margin: 0;
     padding: 0;
