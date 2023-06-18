@@ -7,10 +7,86 @@
 !include ICONURL/devicons2/nginx_original.puml
 !include ICONURL/devicons2/mysql.puml
 
-Container(website, "Website", "NextJS", "Versão otimizada para web com todos os recursos existentes no aplicativo mobile.", $sprite="nextjs_original")
-Container(mobile, "Mobile APP", "NextJS", "Produto pensado e otimizado para o mobile", $sprite="nextjs_original")
-System_Boundary(software, "API") {
+Person(user, "Usuário", "Um usuário qualquer")
 
+System_Boundary(app, "Aplicação") {
+  Boundary(all_components, "Todos os componentes") {
+    Boundary(components, "Componentes") {
+      Component(post, "Post")
+      Component(image, "Imagem")
+      Component(text, "Text")
+      Component(like, "Like")
+      Component(likes_counter, "Contador de likes")
+      Component(comment, "Comentário")
+      Component(comments_counter, "Contador de comentários")
+      Component(icon, "Imagens passadas ficam no formato de ícone")
+      Component(share_button, "Botão de compartilhar")
+      Component(button, "Botão")
+      Component(hero_icon, "Todos os ícones suportados pela aplicação")
+      Component(gamix_logo, "Logo do Gamix")
+      Component(text_input, "Input de texto")
+      Component(password_input, "Input de senha")
+      Component(check_box, "Checkbox")
+      Component(options, "Opções")
+      Component(title, "Titulo")
+      Component(filter, "Filtro")
+      Component(search_bar, "Barra de pesquisa")
+      Component(followers_counter, "Contador de seguidores")
+    }
+    Boundary(layout, "Layout") {
+      Component(navbar, "Navbar", "Barra de navegação")
+      Component(children, "Children", "Tudo o que for colocado dentro do Layout será colocado aqui")
+      Component(footer, "Rodapé", "Rodapé apenas visualizável no desktop")
+    }
+  }
+  Boundary(pages, "Páginas") {
+    Component(register, "Registrar-se", "Usuários podem criar uma nova conta nessa página")
+    Component(login, "Login", "Usuários podem se conectar em suas contas nessa página")
+    Component(feed, "Feed", "Mostras posts de todos os tipos")
+    Component(search, "Descubra", "Aqui o usuário pode fazer pesquisas sobre pessoas, projetos, tópicos, etc...")
+    Component(create, "Criar", "Aqui podem ser criados posts ou projetos.")
+    Component(team_profile, "Perfil da equipe", "O perfil de uma equipe pode ser visualizado aqui, seus posts, projetos, membros, etc...")
+    Component(user_profile, "Perfil do usuário", "Aqui é possível visualizar o perfil de um usuário, seus posts, projetos, suas equipes, etc...")
+  }
+  Rel_Down(user, pages, "Navega")
+  Rel_Down(pages, all_components, "Usam")
+  Rel_Down(layout, components, "Usam")
+
+  Rel_Down(post, like, "Usa")
+  Rel_Down(post, comment, "Usa")
+  Rel_Down(post, icon, "Usa")
+  Rel_Down(post, share_button, "Usa")
+  Rel_Down(post, image, "Pode usar")
+  Rel_Down(post, text, "Pode usar")
+  Rel_Down(post, button, "Pode usar")
+
+  Rel_Down(like, likes_counter, "Usa")
+  Rel_Down(likes_counter, text, "Usa")
+
+  Rel_Down(comment, comments_counter, "Usa")
+  Rel_Down(comments_counter, text, "Usa")
+
+  Rel_Down(share_button, hero_icon, "Usa")
+
+  Rel_Down(button, hero_icon, "Pode usar")
+  Rel_Down(button, text, "Usa")
+
+  Rel_Down(options, hero_icon, "Usa")
+
+  Rel_Down(text_input, hero_icon, "Usa")
+  Rel_Down(text_input, text, "Usa")
+
+  Rel_Down(password_input, hero_icon, "Usa")
+  Rel_Down(password_input, text, "Usa")
+
+  Rel_Down(search_bar, hero_icon, "Usa")
+  Rel_Down(search_bar, text, "Usa")
+
+  Rel_Down(check_box, hero_icon, "Usa")
+
+  Rel_Down(filter, hero_icon, "Usa")
+
+  Rel_Down(followers_counter, text, "Usa")
 }
 
 @enduml
