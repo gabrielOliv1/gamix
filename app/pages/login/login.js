@@ -27,7 +27,7 @@ function login() {
 
     if(username.value.length < 1 || password.value.length < 1) return;
     if(username.value === "pipokinha" && password.value === "pipokinha") {
-        window.location.href = "/feed";
+        window.location.href = "/app/pages/feed/feed.html";
     } else {
         alert("Username ou senha inválido.");
     }
