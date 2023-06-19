@@ -15,7 +15,7 @@
     width: 100%;
     top: 2em;
     left: 2em;
-    color: #ffffff;
+    color: var(--white);
   }
 
   .content-container {
@@ -34,7 +34,7 @@
     align-items: center;
     width: 100%;
     height: auto;
-    background: #626ca7;
+    background: var(--savoy_blue);
     border: none;
     border-radius: 8px;
     box-shadow: 5px 8px 8px rgba(0, 0, 0, 0.25);
@@ -45,21 +45,21 @@
   }
 
   .new-team i {
-    color: #89bddf;
+    color: var(--carolina_blue);
     font-size: 48px;
   }
 
   .new-team span {
-    color: #ffffff;
+    color: var(--white);
     font-size: 18px;
     font-weight: 600;
   }
 
   .my-teams {
-    color: #ffffff;
+    color: var(--white);
     font-size: 18px;
     font-weight: 600;
-    background: #626ca7;
+    background: var(--savoy_blue);
     width: 100%;
     height: auto;
     border-radius: 8px;
@@ -68,7 +68,7 @@
 
   .divider {
     border: none;
-    border-top: 1px solid #333333;
+    border-top: 1px solid var(--jet);
     margin: 12px 0;
   }
 
@@ -92,7 +92,7 @@
   }
 
   .more-teams p {
-    color: #ffffff;
+    color: var(--white);
     font-size: 24px;
   }
 
@@ -105,7 +105,7 @@
     left: 0;
     width: 100%;
     height: 50px;
-    background-color: #333333;
+    background-color: var(--jet);
   }
 
   .nav-icons-container {
@@ -125,11 +125,11 @@
 
   .nav-icons i {
     font-size: 20px;
-    color: #ffffff;
+    color: var(--white)
   }
 
   .nav-icons i:hover {
-    color: #89bddf;
+    color: var(--carolina_blue);
   }
 
   .nav-icons a {
@@ -138,6 +138,6 @@
   }
 
   .nav-icons i.current-page {
-    color: #89bddf;
+    color: var(--carolina_blue);
   }
 }

@@ -1,12 +1,26 @@
+:root {
+    --delft_blue_bg: #1C2034;
+    --delft_blue: #343A5B;
+    --savoy_blue: #626CA7;
+    --jet: #333333;
+    --saffron: #F9C536;
+    --carolina_blue: #89BDDF;
+    --ultra_violet_light: #69599E;
+    --ultra_violet_dark: rgba(105, 89, 158, 60%);
+
+    --white: #fff;
+    --black: #000;
+}
+
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+    font-family: Roboto, sans-serif, monospace;
+    text-decoration: none;
 }
 
 body {
-  background-color: #1c2034;
-  font-family: Roboto, sans-serif;
-  width: 100vw;
-  height: 100vh;
+    background-color: var(--delft_blue_bg);
 }

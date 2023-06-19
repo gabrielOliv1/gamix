@@ -36,7 +36,7 @@
   }
 
   .team-name {
-    color: #ffffff;
+    color: var(--white);
     width: 38px;
     height: 16px;
     font-size: 1em;
@@ -50,7 +50,7 @@
 
   .team-config i {
     font-size: 1.25em;
-    color: #ffffff;
+    color: var(--white);
   }
 
   .main-container {
@@ -86,11 +86,11 @@
 
   .team-links li:first-child,
   .team-links li:nth-child(2) {
-    border-right: 1px solid #333333;
+    border-right: 1px solid var(--jet);
   }
 
   .team-links a {
-    color: #ffffff;
+    color: var(--white);
     font-size: 0.75em;
     text-decoration: none;
     padding: 0 24px;
@@ -111,7 +111,7 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    background: #626ca7;
+    background: var(--savoy_blue)
     border-radius: 8px;
     width: 280px;
   }
@@ -132,21 +132,21 @@
   }
 
   .username {
-    color: #ffffff;
+    color: var(--white);
     font-size: 0.75em;
   }
 
   .post-content { 
     display: flex;
     flex-direction: column;
-    color: #FFFFFF;
+    color: var(--white);
     font-size: 14px;
     padding-left: 12px; 
     gap: 5px;
   }
 
   .post-content p {
-    color: #FFFFFF;
+    color: var(--white);
     font-size: 12px;
   }
 
@@ -155,7 +155,7 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    color:  #FFFFFF;
+    color:  var(--white);
     right: 14px;
     height: 100%
   }
@@ -166,7 +166,7 @@
     justify-content: space-between;
     width: 226px;
     padding: 12px 0px;
-    color: #ffffff;
+    color: var(--white);
   }
 
   .post-commands-icon-container {
@@ -185,7 +185,7 @@
     left: 0;
     width: 100%;
     height: 50px;
-    background-color: #333333;
+    background-color: var(--jet);
   }
 
   .nav-icons-container {
@@ -205,11 +205,11 @@
 
   .nav-icons i {
     font-size: 20px;
-    color: #ffffff;
+    color: var(--white);
   }
 
   .nav-icons i:hover {
-    color: #89bddf;
+    color: var(--carolina_blue)
   }
 
   .nav-icons a {
@@ -218,6 +218,6 @@
   }
 
   .nav-icons i.current-page {
-    color: #89bddf;
+    color: var(--carolina_blue)
   }
 }
