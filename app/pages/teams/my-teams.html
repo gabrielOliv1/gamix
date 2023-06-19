@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <base href="/app" />
+    <link rel="stylesheet" href="/app/styles/global.style.css" />
+    <link rel="stylesheet" href="/app/pages/teams/style/my-teams.css" />
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <title>Minhas equipes</title>
+  </head>
+
+  <body>
+    <main class="main-container">
+      <header class="title-container">
+        <h1 class="title">Suas equipes</h1>
+      </header>
+      <section class="content-container">
+        <button class="new-team">
+          <div class="icon-box">
+            <i class="ph-bold ph-users-three"></i>
+          </div>
+          <span>Nova equipe</span>
+        </button>
+        <div class="my-teams">
+          <ul>
+            <li>
+              <img src="/app/images/TeamIconDSM.svg" alt="Foto da equipe DSM" />
+              <span>DSM</span>
+            </li>
+            <div class="divider"></div>
+            <li>
+              <img
+                src="/app/images/TeamIconRockstar.svg"
+                alt="Foto da equipe Rockstar"
+              />
+              <span>GTA VI</span>
+            </li>
+            <div class="divider"></div>
+            <li>
+              <img
+                src="/app/images/TeamIconCyberpunk.svg"
+                alt="Foto da equipe Cyberpunk"
+              />
+              <span>CYBERPUNK 2099</span>
+            </li>
+            <div class="divider"></div>
+          </ul>
+          <button class="more-teams">
+            <p>Ver todos</p>
+            <img src="/app/images/CaretRight.svg" alt="Ver todos">
+          </button>
+        </div>
+      </section>
+    </main>
+    <nav class="nav-bottom-container">
+      <ul class="nav-icons-container">
+        <li class="nav-icons">
+          <a href="/app/pages/feed/feed.html"
+            ><i class="ph-fill ph-house"></i
+          ></a>
+        </li>
+        <li class="nav-icons">
+          <a href="/app/pages/feed/feed.html"
+            ><i class="ph-bold ph-magnifying-glass"></i
+          ></a>
+        </li>
+        <li class="nav-icons"><i class="ph-bold ph-plus"></i></li>
+        <li class="nav-icons">
+          <a href="/app/pages/teams/teams.html"
+            ><i class="ph-bold ph-users-three current-page"></i
+          ></a>
+        </li>
+        <li class="nav-icons">
+          <a href="/app/pages/userProfile/userProfile.html"
+            ><i class="ph-bold ph-user"></i
+          ></a>
+        </li>
+      </ul>
+    </nav>
+  </body>
+</html>
