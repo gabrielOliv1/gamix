@@ -239,3 +239,6 @@ body {
   .nav-icons i.current-page {
     color: #89BDDF;
   }
+  button{
+    border: none;
+  }
