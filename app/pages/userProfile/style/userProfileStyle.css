@@ -242,3 +242,34 @@ body {
   button{
     border: none;
   }
+  .create-dropdown {
+    width: 100vw;
+    height: 46px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 80px;
+    position: fixed;
+    bottom: 50px;
+    left: 0;
+    background-color: #333333;
+}
+
+.create-dropdown-item > svg {
+    width: 20px;
+    height: 20px;
+}
+
+.create-dropdown-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.create-dropdown-item:hover {
+    opacity: 0.8;
+}
