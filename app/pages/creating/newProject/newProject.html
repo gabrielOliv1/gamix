@@ -1,13 +1,89 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/app/styles/global.style.css">
+    <link rel="stylesheet" href="/styles/global.style.css">
     <title>New project</title>
+    <link rel="stylesheet" href="style/ProjectStyle.css">
+    <script src="JS/ProjectJS.js"></script>
+    <script src="/js/open-dropdown.js"></script>
+
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
 </head>
+
 <body>
-    
+    <div id="background">
+        <div id="publish">
+            <div id="text">Criar novo projeto</div>
+            <div id="line">
+                <div id="comunity">
+                    <img src="img/128170148.png" />
+                </div>
+                <div id="text2">Comunidade</div>
+                <a href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5"
+                    width="20px" onmouseover="this.style.color = '#89BDDF'" onmouseout="this.style.color = '#FFFFFF'">
+                    <path fill-rule="evenodd"
+                        d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                        clip-rule="evenodd" />
+                </svg></a>
+            </div>
+        </div>
+        <input id="rectangle_1" type="text" onclick="removerTexto()" value="Título">
+        <div id="rectangle_2">
+            <textarea id="text_rectangle_2" type="text" onclick="removerTexto2()">Descrição</textarea>
+        </div>
+        <div id="rectangle_3">
+            <div id="text4">Temas</div>
+            <a href="#"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                    stroke-width="1.5" stroke="currentColor" class="w-6 h-6" onmouseover="this.style.color = '#89BDDF'"
+                    onmouseout="this.style.color = '#FFFFFF'">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg></a>
+        </div>
+        <div id="rectangle_4">
+            <div id="text3">
+                <p>Diretórios</p><img src="img/image-removebg-preview.png" width="30px" />
+            </div>
+        </div>
+        <button>
+            <div id="button_conf">Continuar</div>
+        </button>
+    </div>
+    <div class="create-dropdown" id="create-dropdown-container" style="display: none;">
+        <a href="/pages/creating/newPost/newPost.html" style="color: white;">
+            <div class="create-dropdown-item">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M4.913 2.658c2.075-.27 4.19-.408 6.337-.408 2.147 0 4.262.139 6.337.408 1.922.25 3.291 1.861 3.405 3.727a4.403 4.403 0 00-1.032-.211 50.89 50.89 0 00-8.42 0c-2.358.196-4.04 2.19-4.04 4.434v4.286a4.47 4.47 0 002.433 3.984L7.28 21.53A.75.75 0 016 21v-4.03a48.527 48.527 0 01-1.087-.128C2.905 16.58 1.5 14.833 1.5 12.862V6.638c0-1.97 1.405-3.718 3.413-3.979z" />
+                    <path d="M15.75 7.5c-1.376 0-2.739.057-4.086.169C10.124 7.797 9 9.103 9 10.609v4.285c0 1.507 1.128 2.814 2.67 2.94 1.243.102 2.5.157 3.768.165l2.782 2.781a.75.75 0 001.28-.53v-2.39l.33-.026c1.542-.125 2.67-1.433 2.67-2.94v-4.286c0-1.505-1.125-2.811-2.664-2.94A49.392 49.392 0 0015.75 7.5z" />
+                </svg>
+                <span>Post</span>
+            </div>
+        </a>
+        <a href="/pages/creating/newProject/newProject.html" style="color: white;">
+            <div class="create-dropdown-item">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M5.625 1.5c-1.036 0-1.875.84-1.875 1.875v17.25c0 1.035.84 1.875 1.875 1.875h12.75c1.035 0 1.875-.84 1.875-1.875V12.75A3.75 3.75 0 0016.5 9h-1.875a1.875 1.875 0 01-1.875-1.875V5.25A3.75 3.75 0 009 1.5H5.625z" />
+                    <path d="M12.971 1.816A5.23 5.23 0 0114.25 5.25v1.875c0 .207.168.375.375.375H16.5a5.23 5.23 0 013.434 1.279 9.768 9.768 0 00-6.963-6.963z" />
+                </svg>
+                <span>Projetos</span>
+            </div>
+        </a>
+    </div>
+    <nav class="nav-bottom-container">
+        <ul class="nav-icons-container">
+            <li class="nav-icons"><a href="/pages/feed/feed.html"><i class="ph-fill ph-house"></i></a></li>
+            <li class="nav-icons"><a href="/pages/search/search.html"><i class="ph-bold ph-magnifying-glass"></i></a></li>
+            <li class="nav-icons" id="open-create-dropdown"><i class="ph-bold ph-plus current-page" style="cursor:pointer;"></i></li>
+            <li class="nav-icons"><a href="/pages/teams/teams.html"><i class="ph-bold ph-users-three "></i></a></li>
+            <li class="nav-icons"><a href="/pages/userProfile/userProfile.html"><i class="ph-bold ph-user"></i></a>
+            </li>
+        </ul>
+    </nav>
+    </div>
 </body>
+
 </html>
