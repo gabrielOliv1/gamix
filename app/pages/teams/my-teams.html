@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <base href="/app" />
-    <link rel="stylesheet" href="/app/styles/global.style.css" />
-    <link rel="stylesheet" href="/app/pages/teams/style/my-teams.css" />
+    <link rel="stylesheet" href="/styles/global.style.css" />
+    <link rel="stylesheet" href="/pages/teams/style/my-teams.css" />
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <title>Minhas equipes</title>
   </head>
@@ -25,13 +25,19 @@
         <div class="my-teams">
           <ul>
             <li>
-              <img src="/app/images/TeamIconDSM.svg" alt="Foto da equipe DSM" />
-              <span>DSM</span>
+              <a 
+                href="/pages/teams/teams.html" 
+                style="display:flex;flex-direction:row;align-items:center;justify-content:center;text-decoration:none;gap:12px;color:white;"
+                onMouseOver="this.style.opacity='0.8'" onMouseOut="this.style.opacity='1'"
+              >
+                <img src="/images/TeamIconDSM.svg" alt="Foto da equipe DSM" />
+                <span>DSM</span>
+              </a>
             </li>
             <div class="divider"></div>
             <li>
               <img
-                src="/app/images/TeamIconRockstar.svg"
+                src="/images/TeamIconRockstar.svg"
                 alt="Foto da equipe Rockstar"
               />
               <span>GTA VI</span>
@@ -39,7 +45,7 @@
             <div class="divider"></div>
             <li>
               <img
-                src="/app/images/TeamIconCyberpunk.svg"
+                src="/images/TeamIconCyberpunk.svg"
                 alt="Foto da equipe Cyberpunk"
               />
               <span>CYBERPUNK 2099</span>
@@ -48,7 +54,7 @@
           </ul>
           <button class="more-teams">
             <p>Ver todos</p>
-            <img src="/app/images/CaretRight.svg" alt="Ver todos">
+            <img src="/images/CaretRight.svg" alt="Ver todos">
           </button>
         </div>
       </section>
@@ -56,23 +62,23 @@
     <nav class="nav-bottom-container">
       <ul class="nav-icons-container">
         <li class="nav-icons">
-          <a href="/app/pages/feed/feed.html"
+          <a href="/pages/feed/feed.html"
             ><i class="ph-fill ph-house"></i
           ></a>
         </li>
         <li class="nav-icons">
-          <a href="/app/pages/feed/feed.html"
+          <a href="/pages/search/search.html"
             ><i class="ph-bold ph-magnifying-glass"></i
           ></a>
         </li>
         <li class="nav-icons"><i class="ph-bold ph-plus"></i></li>
         <li class="nav-icons">
-          <a href="/app/pages/teams/teams.html"
+          <a href="/pages/teams/my-teams.html"
             ><i class="ph-bold ph-users-three current-page"></i
           ></a>
         </li>
         <li class="nav-icons">
-          <a href="/app/pages/userProfile/userProfile.html"
+          <a href="/pages/userProfile/userProfile.html"
             ><i class="ph-bold ph-user"></i
           ></a>
         </li>
